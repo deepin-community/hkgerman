@@ -1,0 +1,17 @@
+Description: Correct handling of 'ss' and 'SS' in HTML affix file.
+Author: Roland Rosenfeld <roland@debian.org>
+Bug-Debian: http://bugs.debian.org/154569
+Forwarded: no upstream available
+
+--- a/deutsch.aff
++++ b/deutsch.aff
+@@ -318,6 +318,9 @@ altstringchar	&Ouml;	O\"
+ altstringchar	&uuml;	u\"
+ altstringchar	&Uuml;	U\"
+ altstringchar	&szlig;	sS
++altstringchar	SS	Ss
++altstringchar	ss	ss
++altstringchar	SS	SS
+ 
+ 
+ #

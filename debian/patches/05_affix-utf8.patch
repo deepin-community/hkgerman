@@ -1,0 +1,30 @@
+Description: Add UTF8 support to affix file.
+Author: Bjoern Jacke <bjoern@j3e.de>
+Forwarded: no upstream available
+
+--- a/deutsch.aff
++++ b/deutsch.aff
+@@ -276,6 +276,23 @@ altstringchar	ï	ï
+ altstringchar	ñ	ñ
+ 
+ #
++# Alternate forms for ISO latin1 charset
++#
++altstringtype "utf8" "TeX" ".txt"
++altstringchar	\303\244	a\"
++altstringchar	\303\204	A\"
++altstringchar	\303\266	o\"
++altstringchar	\303\226	O\"
++altstringchar	\303\274	u\"
++altstringchar	\303\234	U\"
++altstringchar	\303\237	sS
++altstringchar	SS	Ss  # using two definitions of SS is difficult:
++             		    # GROSS will not be accepted but suggested at
++             		    # the same time :-|
++altstringchar	ss	ss
++altstringchar	SS	SS  # this definition is used for checking
++
++#
+ # Alternate forms for plain ASCII text files
+ altstringtype "ascii" "nroff" ".ascii" ".txt"
+ 

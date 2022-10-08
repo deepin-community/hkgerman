@@ -1,0 +1,308 @@
+Description: Several optimizations to the affix file.
+Origin: igerman98 and older versions of hkgerman package.
+Author: Roland Rosenfeld <roland@debian.org>
+Forwarded: no upstream available
+
+--- a/deutsch.aff
++++ b/deutsch.aff
+@@ -186,16 +186,20 @@ allaffixes on
+ #
+ defstringtype "list" "nroff" ".list"
+ 
+-wordchars	a	A
+-stringchar	a\"	A\"
+-wordchars	[b-o]	[B-O]
+-stringchar	o\"	O\"
+-wordchars	[p-s]	[P-S]
+-stringchar	ss	SS
+-stringchar	sS	# Ss		# No captalized version
+-wordchars	[tu]	[TU]
+-stringchar	u\"	U\"
+-wordchars	[v-z]	[V-Z]
++wordchars	[a-z]	[A-Z]
++stringchar	a\"	A\"	# ä
++stringchar	o\"	O\"	# ö
++stringchar	ss	SS	# tricky :-)
++stringchar	sS	Ss	# ß (no captalized version of ß - use SS for it)
++stringchar	u\"	U\"	# ü
++stringchar	à
++stringchar	ç	Ç
++stringchar	é
++stringchar	ë
++stringchar	ê
++stringchar	ï
++stringchar	ñ
++########## Does anyone want more characters?
+ 
+ #
+ # TeX/LaTeX a` la german.sty
+@@ -209,8 +213,17 @@ altstringchar	\"O	O\"
+ altstringchar	\"u	u\"
+ altstringchar	\"U	U\"
+ altstringchar	\"s	sS
++altstringchar	\"S	Ss
+ altstringchar	ss	ss
+ altstringchar	SS	SS
++altstringchar	\\`a	à
++altstringchar	\\c{c}	ç
++altstringchar	\\c{C}	Ç
++altstringchar	\\'e	é
++altstringchar	\\"e	ë
++altstringchar	\\^e	ê
++altstringchar	\\\"{\\i}	ï
++altstringchar	\\~n	ñ
+ 
+ #
+ # Plain TeX
+@@ -224,38 +237,43 @@ altstringchar	\\\"O	O\"
+ altstringchar	\\\"u	u\"
+ altstringchar	\\\"U	U\"
+ altstringchar	{\\ss}	sS
++altstringchar	{\\SS}	Ss
+ altstringchar	ss	ss
+ altstringchar	SS	SS
++altstringchar	\\`a	à
++altstringchar	\\c{c}	ç
++altstringchar	\\c{C}	Ç
++altstringchar	\\'e	é
++altstringchar	\\"e	ë
++altstringchar	\\^e	ê
++altstringchar	\\\"{\\i}	ï
++altstringchar	\\~n	ñ
+ 
+ #
+-# N/Troff with -ms/-me macros packages
+-#
+-altstringtype "nroff" "nroff" ".nr" ".ms" ".me"
+-
+-altstringchar	a\\*\:	a\"
+-altstringchar	A\\*\:	A\"
+-altstringchar	o\\*\:	o\"
+-altstringchar	O\\*\:	O\"
+-altstringchar	u\\*\:	u\"
+-altstringchar	U\\*\:	U\"
+-altstringchar	\\*8	sS
+-altstringchar	ss	ss
+-altstringchar	SS	SS
+-
+-#
+-# N/Troff with -mm macros
++# Alternate forms for ISO latin1 charset
+ #
+-altstringtype "-mm" "nroff" ".nr" ".mm"
++altstringtype "latin1" "TeX" ".latin1" ".txt" ".tex" ".bib"
+ 
+-altstringchar	a\\*\:	a\"
+-altstringchar	A\\*\;	A\"
+-altstringchar	o\\*\:	o\"
+-altstringchar	O\\*\;	O\"
+-altstringchar	u\\*\:	u\"
+-altstringchar	U\\*\;	U\"
+-altstringchar	\\*(ss	sS
++altstringchar	\344	a\"
++altstringchar	\304	A\"
++altstringchar	\366	o\"
++altstringchar	\326	O\"
++altstringchar	\374	u\"
++altstringchar	\334	U\"
++altstringchar	\337	sS
++altstringchar	SS	Ss  # using two definitions of SS is difficult:
++             		    # GROSS will not be accepted but suggested at
++             		    # the same time :-|
+ altstringchar	ss	ss
+-altstringchar	SS	SS
++altstringchar	SS	SS  # this definition is used for checking
++altstringchar	à	à
++altstringchar	ç	ç
++altstringchar	Ç	Ç
++altstringchar	é	é
++altstringchar	ë	ë
++altstringchar	ê	ê
++altstringchar	ï	ï
++altstringchar	ñ	ñ
+ 
+ #
+ # Alternate forms for plain ASCII text files
+@@ -268,82 +286,121 @@ altstringchar	Oe	O\"
+ altstringchar	ue	u\"
+ altstringchar	Ue	U\"
+ altstringchar	ss	sS
++altstringchar	SS	Ss
+ altstringchar	ss	ss
+ altstringchar	SS	SS
+ 
+ #
+-# Alternate forms for ISO latin1 charset
++# Alternate forms for PC charset
+ #
+-altstringtype "latin1" "nroff" ".latin1" ".txt"
++altstringtype "pc" "TeX" ".pc" ".txt" ".tex"
+ 
+-altstringchar	\344	a\"
+-altstringchar	\304	A\"
+-altstringchar	\366	o\"
+-altstringchar	\326	O\"
+-altstringchar	\374	u\"
+-altstringchar	\334	U\"
+-altstringchar	\337	sS
++altstringchar	\204	a\"
++altstringchar	\216	A\"
++altstringchar	\224	o\"
++altstringchar	\231	O\"
++altstringchar	\201	u\"
++altstringchar	\232	U\"
++altstringchar	\341	sS
++altstringchar	SS	Ss
+ altstringchar	ss	ss
+ altstringchar	SS	SS
+ 
+ #
+-# Alternate form for NeXTSTEP charset
++# SGML, HTML, and XML entities
+ #
+-altstringtype "NeXT" "TeX" ".NeXT" ".txt" ".tex"
++altstringtype "HTML" "TeX" ".html" ".htm" ".sgml" ".xml"
++
++altstringchar	&auml;	a\"
++altstringchar	&Auml;	A\"
++altstringchar	&ouml;	o\"
++altstringchar	&Ouml;	O\"
++altstringchar	&uuml;	u\"
++altstringchar	&Uuml;	U\"
++altstringchar	&szlig;	sS
+ 
+-altstringchar	\331	a\"
+-altstringchar	\205	A\"
+-altstringchar	\360	o\"
+-altstringchar	\226	O\"
+-altstringchar	\366	u\"
+-altstringchar	\271	U\"
+-altstringchar	\373	sS
+-altstringchar	ss	ss
+-altstringchar	SS	SS
+ 
+ #
+-# Alternate forms for HP-Roman8 charset
+-# (used on HP-9000 machines under HP-VUE and maybe others)
++# N/Troff with -ms/-me macros packages
+ #
+-altstringtype "roman8" "TeX" ".roman8" ".txt" ".tex"
++#altstringtype "nroff" "nroff" ".nr" ".ms" ".me"
+ 
+-altstringchar	\314	a\"
+-altstringchar	\330	A\"
+-altstringchar	\316	o\"
+-altstringchar	\332	O\"
+-altstringchar	\317	u\"
+-altstringchar	\333	U\"
+-altstringchar	\336	sS
+-altstringchar	ss	ss
+-altstringchar	SS	SS
++#altstringchar	a\\*\:	a\"
++#altstringchar	A\\*\:	A\"
++#altstringchar	o\\*\:	o\"
++#altstringchar	O\\*\:	O\"
++#altstringchar	u\\*\:	u\"
++#altstringchar	U\\*\:	U\"
++#altstringchar	\\*8	sS
++#altstringchar	SS	Ss
++#altstringchar	ss	ss
++#altstringchar	SS	SS
+ 
+ #
+-# Alternate forms for PC charset
++# N/Troff with -mm macros
+ #
+-altstringtype "pc" "TeX" ".pc" ".txt" ".tex"
++#altstringtype "-mm" "nroff" ".nr" ".mm"
+ 
+-altstringchar	\204	a\"
+-altstringchar	\216	A\"
+-altstringchar	\224	o\"
+-altstringchar	\231	O\"
+-altstringchar	\201	u\"
+-altstringchar	\232	U\"
+-altstringchar	\341	sS
+-altstringchar	ss	ss
+-altstringchar	SS	SS
++#altstringchar	a\\*\:	a\"
++#altstringchar	A\\*\;	A\"
++#altstringchar	o\\*\:	o\"
++#altstringchar	O\\*\;	O\"
++#altstringchar	u\\*\:	u\"
++#altstringchar	U\\*\;	U\"
++#altstringchar	\\*(ss	sS
++#altstringchar	SS	Ss
++#altstringchar	ss      ss
++#altstringchar	SS      SS
++
++#
++# Alternate form for NeXTSTEP charset
++#
++#altstringtype "NeXT" "TeX" ".NeXT" ".txt" ".tex"
++
++#altstringchar	\331	a\"
++#altstringchar	\205	A\"
++#altstringchar	\360	o\"
++#altstringchar	\226	O\"
++#altstringchar	\366	u\"
++#altstringchar	\271	U\"
++#altstringchar	\373	sS
++#altstringchar	SS	Ss
++#altstringchar	ss	ss
++#altstringchar	SS	SS
++
++#
++# Alternate forms for HP-Roman8 charset
++# (used on HP-9000 machines under HP-VUE and maybe others)
++#
++#altstringtype "roman8" "TeX" ".roman8" ".txt" ".tex"
++#
++#altstringchar	\314	a\"
++#altstringchar	\330	A\"
++#altstringchar	\316	o\"
++#altstringchar	\332	O\"
++#altstringchar	\317	u\"
++#altstringchar	\333	U\"
++#altstringchar	\336	sS
++#altstringchar	SS	Ss
++#altstringchar	ss	ss
++#altstringchar	SS	SS
+ 
+ #
+ # Alternate forms for ATARI charset
+ #
+-altstringtype "atari" "TeX" ".atari" ".txt" ".tex"
++#altstringtype "atari" "TeX" ".atari" ".txt" ".tex"
++#
++#altstringchar	\204	a\"
++#altstringchar	\216	A\"
++#altstringchar	\224	o\"
++#altstringchar	\231	O\"
++#altstringchar	\201	u\"
++#altstringchar	\232	U\"
++#altstringchar	\341	sS
++#altstringchar	SS	Ss
++#altstringchar	ss	ss
++#altstringchar	SS	SS
+ 
+-altstringchar	\204	a\"
+-altstringchar	\216	A\"
+-altstringchar	\224	o\"
+-altstringchar	\231	O\"
+-altstringchar	\201	u\"
+-altstringchar	ss	ss
+-altstringchar	SS	SS
+ 
+ #
+ #			Quick Reference
+@@ -719,7 +776,8 @@ flag *I:
+ 
+ # special treatment for 'tun': (worthwile?)
+     U N 		>	-N,E		#     tun > ich tue
+-    U N 		>	-N,EN		#     tun > wir tuen
++# Duden: ich tu[e], du tust, er tut, wir tun, ihr tut, sie tun:
++#   U N 		>	-N,EN		#     tun > wir tuen
+     U N 		>	-N,T		#     tun > er	tut
+ 
+ 

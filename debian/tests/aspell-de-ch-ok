@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Test aspell dictionary with a correct UTF-8 de_CH-1901 text.
+#
+# (c) 2018 Roland Rosenfeld <roland@debian.org>
+
+TESTSDIR=$(dirname $0)
+
+if [ -z "$AUTOPKGTEST_TMP" ]; then
+    AUTOPKGTEST_TMP=$(mktemp -d)
+fi
+
+trap "rm -rf $AUTOPKGTEST_TMP" EXIT
+
+sed 's/ß/ss/g' < $TESTSDIR/correct.utf8.txt > $AUTOPKGTEST_TMP/correct.ch.txt
+OUTPUT=$(aspell list -d de_CH-1901 < $AUTOPKGTEST_TMP/correct.ch.txt)
+
+if [ -z "$OUTPUT" ]
+then
+    exit 0
+else
+    echo "aspell did not accept the following words:"
+    echo $OUTPUT
+    exit 1
+fi

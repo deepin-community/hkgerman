@@ -1,0 +1,935 @@
+Description: Several fixes from Bjoern Jacke.
+Origin: https://www.j3e.de/ispell/hk2/hk2-buglist
+Author: Bjoern Jacke <bjoern@j3e.de>
+Forwarded: no upstream available
+
+--- a/adjektive.txt
++++ b/adjektive.txt
+@@ -377,7 +377,7 @@ agrarisch/A
+ ahnungslos/AC
+ ahnungsvoll/AC
+ akademisch/AC
+-akkreditert/A
++akkreditiert/A
+ akkugepuffert/A
+ akkurat/A
+ akquisitorisch/A
+@@ -770,7 +770,7 @@ anspruchsvoll/AC
+ ansta"ndig/ACU
+ anstandslos/A
+ anstellig/AC
+-ansto"ssig/AC
++ansto"sSig/AC
+ anstrengend/AC
+ antarktisch/A
+ anteilig/A
+@@ -1047,7 +1047,7 @@ aufgezogen/A
+ aufgezwungen/A
+ aufgliedernd/A
+ aufkla"rerisch/A
+-auflagenstark/AC
++auflagenstark/A
+ auflandig/A
+ auflodernd/A
+ aufmerksam/ACU
+@@ -1235,7 +1235,6 @@ ausgereift/A
+ ausgereist/A
+ ausgereizt/A
+ ausgerenkt/A
+-ausgererechnet/A
+ ausgerichtet/A
+ ausgerissen/A
+ ausgeritten/A
+@@ -1350,7 +1349,6 @@ ba"renstark/A
+ ba"rtig/A
+ ba"uerlich/A
+ bahnbrechend/A
+-bahutsam/AC
+ bakteriell/A
+ baldig/A
+ baldmo"glich/AC
+@@ -1822,7 +1820,7 @@ charakterfest/A
+ charakteristisch/AC
+ charakterlich/A
+ charakterlos/AC
+-charakterstark/AC
++charakterstark/A
+ charaktervoll/A
+ charismatisch/AC
+ charmant/AC
+@@ -2306,7 +2304,6 @@ eingefettet/A
+ eingefleischt/A
+ eingeflo"sSt/A
+ eingeflogen/A
+-eingeforen/A
+ eingefroren/A
+ eingefu"gt/A
+ eingefu"hrt/A
+@@ -2605,7 +2602,6 @@ englischsprechend/A
+ engmaschig/A
+ engspurig/A
+ engstirnig/A
+-engu"ltig/A
+ engumrissen/A
+ engverbunden/A
+ enorm/AC
+@@ -2823,7 +2819,6 @@ explosionsfa"hig/A
+ explosionsgefa"hrdet/A
+ explosionsgeschu"tzt/A
+ explosiv/AC
+-exponential/A
+ exponentiell/A
+ exponiert/AC
+ expressionistisch/A
+@@ -3836,7 +3831,6 @@ gesagt/AU
+ gesalbt/A
+ gesalzen/AU
+ gesammelt/A
+-gesammte/A
+ gesamt/A
+ gesamtheitlich/A
+ gesamtstaatlich/A
+@@ -4694,7 +4688,7 @@ hektisch/AC
+ heldenhaft/AC
+ heldenmu"tig/A
+ hell/AC
+-hellbeig/A
++hellbeige/A
+ hellblau/A
+ hellblond/A
+ hellgefa"rbt/A
+@@ -5183,7 +5177,6 @@ intim/AC
+ intolerant/AC
+ intransitiv/A
+ intraveno"s/A
+-intrumental/A
+ intuitiv/A
+ invariant/A
+ invers/A
+@@ -5785,7 +5778,6 @@ lieferfa"hig/A
+ lieferfertig/A
+ liegengeblieben/A
+ liegengelassen/A
+-lies/A
+ lind/A
+ linear/A
+ linguistisch/A
+@@ -6081,7 +6073,6 @@ mittelkurz/A
+ mittellang/A
+ mittellos/A
+ mittelma"sSig/AC
+-mittelos/A
+ mittelschwer/A
+ mitteltra"ge/A
+ mittig/A
+@@ -6602,7 +6593,6 @@ phonetisch/A
+ photochemisch/A
+ photoelektrisch/A
+ photogen/AC
+-photografisch/A
+ photographisch/A
+ phrasenhaft/A
+ phylogenetisch/A
+@@ -6874,7 +6864,7 @@ redlich/ACU
+ redselig/AC
+ redundant/A
+ reell/ACU
+-referentiell/A
++referenziell/A
+ reflektiv/A
+ reflexartig/A
+ reflexionsfrei/A
+@@ -7497,7 +7487,6 @@ sozialkritisch/A
+ sozialliberal/A
+ sozialo"konomisch/A
+ sozialpolitisch/A
+-sozialpotitisch/A
+ soziographisch/A
+ soziologisch/A
+ spa"rlich/AC
+@@ -7991,7 +7980,6 @@ u"bellaunig/A
+ u"belriechend/A
+ u"belwollend/A
+ u"bera"ngstlich/A
+-u"berabeitet/A
+ u"beraltert/A
+ u"berarbeitet/A
+ u"berbeladen/A
+@@ -9412,7 +9400,7 @@ wochenweise/A
+ wohl/AC
+ wohlangebracht/AC
+ wohlansta"ndig/AC
+-wohlauf/A
++wohlauf
+ wohlbedacht/AC
+ wohlbehalten/AC
+ wohlbekannt/A
+--- a/compeng.txt
++++ b/compeng.txt
+@@ -1,6 +1,4 @@
+ Access
+-Accessoiries
+-Accessoiry
+ AdresSoffset/S
+ Ansteuerboard/S
+ Arbeitsdirectory
+@@ -155,7 +153,7 @@ Netzwerkinterface/S
+ Newsgroup/S
+ Newsgruppe/N
+ Nibbleoperation/P
+-Ouput
++Output
+ Outputfile/S
+ Page
+ Paperfeed
+--- a/informatik.txt
++++ b/informatik.txt
+@@ -580,7 +580,6 @@ Induktionsbeweis/EPT
+ Induktionshypothese/N
+ Induktionsmethode/N
+ Induktionsprinzip
+-Induktionsschlu"s/QS
+ InduktionsschlusS/T
+ Induktionsschritt
+ Induktionsvoraussetzung
+@@ -1296,7 +1295,6 @@ baumartig/A
+ benutzerdefiniert/A
+ bijektiv/A
+ bitweise/A
+-boolesch/A
+ compilieren/IXYDO
+ deduktiv/A
+ deduzieren/IXYDO
+--- a/klein.txt
++++ b/klein.txt
+@@ -38,7 +38,6 @@ altrosa
+ am
+ an/S
+ anbei
+-anbetrachts
+ anderenfalls
+ anderenorts
+ andererseits
+@@ -110,7 +109,7 @@ bestens
+ betreffs
+ bevor
+ bewenden
+-bewiesenerma"sen
++bewiesenermasSen
+ bezeichnenderweise
+ beziehungsweise
+ binnen
+@@ -196,7 +195,6 @@ desselben
+ dessen
+ desto
+ deswegen
+-desweiteren
+ dich
+ die
+ diejenige/N
+@@ -279,7 +277,6 @@ eineinhalbtausend
+ einerlei
+ einerseits
+ einesteils
+-einfu"rallemal
+ eingangs
+ eingedenk
+ eingestandenermasSen
+@@ -505,7 +502,6 @@ irgendwem
+ irgendwie
+ irgendwo
+ irgendwohin
+-irgenwo
+ irrtu"mlicherweise
+ ist
+ ja
+@@ -865,7 +861,7 @@ unterst
+ untertage
+ unterwegs
+ unvermeidlicherweise
+-unversta"ndlicheierweise
++unversta"ndlicherweise
+ unweit
+ unwohl
+ va"terlicherseits
+@@ -903,7 +899,6 @@ vonno"ten
+ vonstatten
+ vor
+ vorab
+-vorallem
+ voran
+ voraus
+ vorbehaltlos
+@@ -916,7 +911,6 @@ vorgestern
+ vorher
+ vorhin
+ vorn/E
+-vorneherein
+ vorneweg
+ vornherein
+ vorsichtshalber
+--- a/verben.txt
++++ b/verben.txt
+@@ -1,4 +1,3 @@
+-Stout/S
+ a"chten/DIXY
+ a"chzen/DIXY
+ a"chzt/G
+@@ -1703,7 +1702,7 @@ beizustehen
+ beizustellen/D
+ beizutragen/D
+ beizutreten
+-beizuwohen/D
++beizuwohnen/D
+ bejahen/DIOXY
+ bejubeln/DIOXY
+ beka"men/IX
+@@ -2279,7 +2278,7 @@ deputierten/DIOXY
+ desertieren/DIOXY
+ desinfizieren/DIOXY
+ destillieren/DIOXY
+-detailieren/DIOXY
++detaillieren/DIOXY
+ detektieren/BDIOXY
+ determinieren/DIOXY
+ detonieren/DIOXY
+--- a/worte.txt
++++ b/worte.txt
+@@ -162,7 +162,6 @@ Abonnent/P
+ Abordnung/P
+ Abort/EPST
+ Abplattung/P
+-Abpra"lle/N
+ Abprall/S
+ Abraum/S
+ Abrechnung/P
+@@ -241,7 +240,7 @@ Abstimmung/P
+ Abstimmungsbedarf
+ Abstimmungsergebnis/QS
+ Abstinenz
+-AbstosS/JS
++AbstosS/JT
+ Abstraktion/P
+ Abstraktionsebene/N
+ Abstreifer/NS
+@@ -359,12 +358,11 @@ Agentur/P
+ Agenturmeldung/P
+ Aggregat/EPT
+ Aggression/P
++Aggressivita"t/P
+ Aggressor/P
+ Agitation/P
+ Agitator/PS
+ Agonie
+-Agression/P
+-Agressivita"t/P
+ Ahle/N
+ Ahndung/P
+ Ahnfrau/P
+@@ -493,7 +491,7 @@ Ambivalenz/P
+ AmbosS/QS
+ Ambulanz/P
+ Ameise/N
+-Ameisenba"r/EPS
++Ameisenba"r/PT
+ Ameisenhaufen/S
+ Ameisensa"ure/N
+ Ameisenstaat/PS
+@@ -596,7 +594,6 @@ Anfangszeit/P
+ Anfechtung/P
+ Anfeindung/P
+ Anfertigung/P
+-Anffa"lligkeit/P
+ Anflu"ge/N
+ Anflug/ST
+ Anforderung/P
+@@ -908,8 +905,6 @@ Apsis
+ Aquarell/EPS
+ Aquarien
+ Aquarium/S
+-Aquisiteur/EPS
+-Aquisition/P
+ Ar
+ Arabeske/N
+ Araldit
+@@ -1295,7 +1290,6 @@ Aufnahmevermo"gen/S
+ Aufnehmer/N
+ Aufopferung/P
+ Aufpasser/FNS
+-Aufpra"lle/N
+ Aufprall/S
+ Aufpreis/EPT
+ Aufputschmittel/NS
+@@ -1574,7 +1568,6 @@ Ausnutzung/P
+ Ausnutzungsgrad/EPST
+ Ausplu"nderung/P
+ Auspra"gung/P
+-Auspu"ffe/N
+ Auspuff/ST
+ Ausrechnung/P
+ AusreisSer/FNS
+@@ -1633,7 +1626,7 @@ Ausstellung/P
+ Aussterbens
+ Aussteuer/N
+ Ausstieg/S
+-AusstosS/JS
++AusstosS/JT
+ Ausstrahlung/P
+ Ausstrahlungskraft
+ Ausstro"mung
+@@ -1712,7 +1705,7 @@ Ba"nde/N
+ Ba"nder/N
+ Ba"ndigung
+ Ba"nke/N
+-Ba"r/FPS
++Ba"r/PT
+ Ba"rte/N
+ Ba"sse/N
+ Ba"uche/N
+@@ -2655,7 +2648,7 @@ Bo"rse/N
+ Bo"rsianer/FNS
+ Bo"sartigkeit/P
+ Bo"schung/P
+-Bo"sewicht/ENT
++Bo"sewicht/ET
+ Bo"swilligkeit
+ Boa/S
+ Boccia
+@@ -2763,7 +2756,6 @@ Brie
+ Brief/EPST
+ Briefadresse/N
+ Briefaktion/P
+-Briefaufschrifft/P
+ Briefbeschwerer/P
+ Briefbo"gen
+ Briefbogen/S
+@@ -8104,7 +8096,7 @@ Kapazita"t/P
+ Kapazita"tsausnutzung/P
+ Kapelle/N
+ Kaperung
+-Kapillargefa"sS/QS
++Kapillargefa"sS/QES
+ Kapita"ne/N
+ Kapital/S
+ Kapitalisierung
+@@ -8406,7 +8398,6 @@ Klu"fte/N
+ Klub/S
+ Klugheit
+ Klumpen/S
+-Kna"lle/N
+ Kna"uel/NS
+ Knabe/N
+ Knackpunkt/EPT
+@@ -11033,7 +11024,6 @@ Paradigmenwechsel/S
+ Paradoxie/N
+ Paradoxon/S
+ Paraffin
+-Parafin
+ Paragraph/S
+ Parallele/N
+ Parallelita"t
+@@ -11936,7 +11926,7 @@ Rahmenprogramm
+ Rahmenvertrag
+ Rain/EPS
+ Rakete/N
+-Rally
++Rallye
+ Rammbock/ST
+ Rampe/N
+ Randbedingung/P
+@@ -12258,7 +12248,7 @@ Restmenge/N
+ Restriktion/P
+ Restwert/EPS
+ Resultat/EPST
+-Resumee
++Resu"mee
+ Retorte/N
+ Retrospektive
+ Retter/NS
+@@ -12375,7 +12365,7 @@ Rosette/N
+ Rosine/N
+ Rost/T
+ Rotation/P
+-Rotkelchen/S
++Rotkehlchen/S
+ Rotor/P
+ Roulette
+ Route/N
+@@ -12528,7 +12518,7 @@ Sachausgabe/N
+ Sachbearbeiter/FNS
+ Sachbearbeitung
+ Sachbeihilfe/N
+-Sachbereich/NS
++Sachbereich/S
+ Sachbescha"digung/P
+ Sachbu"cher
+ Sachbuch/T
+@@ -13114,7 +13104,6 @@ Schwa"chlichkeit
+ Schwa"chling/EPS
+ Schwa"chung/P
+ Schwa"gerin/F
+-Schwa"lle/N
+ Schwa"mme/N
+ Schwa"ne/N
+ Schwa"ngerung
+@@ -13861,7 +13850,7 @@ Steuerma"nner
+ Steuermann/S
+ Steuerzeichen/S
+ Steward/S
+-StewardesS/S
++StewardesS/Q
+ Stich/EPS
+ Stichel/S
+ Stichelei/P
+@@ -13963,7 +13952,7 @@ Strategiea"nderung
+ Strategieprogramm
+ Stratospha"re
+ Strauch/S
+-StrausS/EPS
++StrausS/EPT
+ Streber/NS
+ Strebertum
+ Strebsamkeit
+@@ -14341,7 +14330,7 @@ Technologietra"ger
+ Technophilie
+ Techtelmechtel/N
+ Teckel/NS
+-Teddyba"r/PS
++Teddyba"r/PT
+ Teebu"chse/N
+ Teenager/NS
+ Teer/S
+@@ -15645,7 +15634,7 @@ Verherrlichung/P
+ Verhetzung
+ Verhinderung/P
+ Verho"hnung
+-Verho"hre/N
++Verho"re/N
+ Verho"r/S
+ Verhu"llung/P
+ Verhu"tung/P
+@@ -17249,7 +17238,6 @@ Zeitkonstante/N
+ Zeitkontrolle/N
+ Zeitkorrektur
+ Zeitla"ufe/N
+-Zeitla"ufte/N
+ Zeitlupe/N
+ Zeitmangel
+ Zeitmesser/NS
+@@ -17437,7 +17425,7 @@ Zipfelmu"tze/N
+ Zirkel/NS
+ Zirkulation/P
+ Zirkumflex/EP
+-Zirkus/QS
++Zirkus/Q
+ Zischlaut/EPT
+ Ziselierarbeit
+ Zisterne/N
+--- a/zusammen.txt
++++ b/zusammen.txt
+@@ -364,7 +364,7 @@ Adventssonntag/EPS
+ Adventszeit
+ Affekthandlung/P
+ Affenfleisch/ST
+-Affenhaus/S
++Affenhaus/T
+ Affenkommentar
+ Affenliebe
+ Affenmensch/P
+@@ -468,7 +468,7 @@ Aktienmarkt/ST
+ Aktienmehrheit
+ Aktienoption/P
+ Aktienpaket/EPS
+-Aktienpreis/EPS
++Aktienpreis/EPT
+ Aktienrecht/EPS
+ Aktienselektion
+ Aktienumsa"tze
+@@ -514,7 +514,7 @@ Alarmklingel/N
+ Alarmknopf
+ Alarmmeldung/P
+ Alarmruf/EPS
+-Alarmsendung/N
++Alarmsendung
+ Alarmsonderstab
+ Alarmu"bung
+ Alarmzeichen
+@@ -621,7 +621,6 @@ Altentagessta"tte/N
+ Altenteiler
+ Altenwerk
+ Altenwohnsitz/ES
+-Altenwohnstift
+ Alternativeinstellung
+ Alternativfrage/N
+ Alternativfragestellung/P
+@@ -958,7 +957,7 @@ Anleihepla"ne/N
+ Anleiheschuld/P
+ Anliegerstaat/P
+ Anmeldestelle/N
+-Anna"herungspolitik/N
++Anna"herungspolitik
+ Annoncenbu"ro/S
+ Anordnungspla"ne/N
+ Anpassungsa"nderung/P
+@@ -3499,7 +3498,7 @@ Blumenriviera
+ Blumenschmuck
+ Blumensto"cke
+ Blumenstra"usSe
+-BlumenstrausS/S
++BlumenstrausS/T
+ Blutabnahme
+ Blutarmut
+ Blutba"der/N
+@@ -3977,7 +3976,7 @@ Brokerkreisen
+ Brokerspesen
+ Brokerverbindung
+ Brombeergestru"pp
+-Brombeerstra"uche
++Brombeerstra"ucher/N
+ Brombeerstrauch/T
+ Bronchialasthma
+ Bronzegruppe
+@@ -6024,7 +6023,7 @@ Einzimmerappartement
+ Einzugschlitz
+ Einzugsroute
+ Einzugstermin/EPS
+-Eisba"r/PS
++Eisba"r/PT
+ Eisbahnen
+ Eisbar
+ Eisbecher
+@@ -8559,7 +8558,7 @@ Forstwirtschaft
+ Fortbildungsanstalt/P
+ Fortbildungsbeihilfe/N
+ FortbildungsmasSnahmen
+-Fortgeschrittenenkurs/EPS
++Fortgeschrittenenkurs/EPT
+ Fortschrittsquote/N
+ Fortschrittswerk
+ Fortsetzungsromanen
+@@ -11655,7 +11654,7 @@ Haselmaus
+ Haselnu"sschen
+ Haselnu"ssen
+ HaselnusS
+-Haselstra"uche/N
++Haselstra"ucher/N
+ Haselstrauch/S
+ Hasenbraten/S
+ Hasenfamilie
+@@ -12225,7 +12224,7 @@ Hilfsverein
+ Hilfswerk/S
+ Himbeersa"fte/N
+ Himbeersaft/ST
+-Himbeerstra"uche/N
++Himbeerstra"ucher/N
+ Himbeerstrauch/S
+ Himmelbett/S
+ Himmelfahrt
+@@ -14891,13 +14890,13 @@ Klemmstellung
+ Klemmteile
+ Klempnerarbeit/P
+ Klempnermeister
+-KlettenverschlusS/S
+ Kletterpflanze/N
+ Kletterrose
+ Kletterschuhe/N
+ Kletterstange
+ Kletterwa"nde/N
+ Kletterwand
++KlettverschlusS/S
+ Klimaa"nderung/P
+ Klimaanlage
+ Klimabedingung/P
+@@ -15164,6 +15163,9 @@ Kohlewirtschaft
+ Kohlmarkt
+ Kohlru"ben
+ Kokosnu"sse
++Kokosnu"ssen
++KokosnusS
++KokosnusSherrscher/N
+ Koksfeinkohle
+ Koksfeuer
+ Koksgas
+@@ -15171,9 +15173,6 @@ Kokshalden
+ Kokspreis
+ Koksproduktion
+ Kokswerke
+-Kokusnu"ssen
+-KokusnusS
+-KokusnusSherrscher/N
+ Kolbenbewegung/P
+ Kolbenboden
+ Kolbenecho
+@@ -15471,7 +15470,6 @@ Kontenunterlagen
+ Konterangriff
+ Konterrevolutiona"r/EPS
+ Kontinentaldrift
+-Kontinentalplateaux
+ Kontinentalsperre
+ Kontingentbeschra"nkung/P
+ Kontoaufstellung
+@@ -20934,7 +20932,6 @@ Pfauenthron
+ Pfefferminze/N
+ Pfeifenmann
+ Pfeifentabake
+-Pfeiffentabak
+ Pfeifkonzert
+ Pfeilerbru"cke
+ Pferdediebe
+@@ -24213,7 +24210,7 @@ Schuldzuweisung
+ Schulexperten
+ Schulferien
+ Schulflugzeug/EPS
+-Schulfreund/FNS
++Schulfreund/FS
+ Schulgela"nde/NS
+ Schulgeld/RT
+ Schulgelehrsamkeit/P
+@@ -24307,7 +24304,7 @@ Schutzanzu"ge/N
+ Schutzanzug/T
+ Schutzart
+ Schutzartanforderung/P
+-Schutzbefohlene/NR
++Schutzbefohlene/N
+ Schutzbehauptung
+ Schutzbereich
+ Schutzbeschaltung
+@@ -24589,7 +24586,7 @@ Sechszehntelnote
+ Sechszylinder
+ Seeanemone
+ Seeba"der/N
+-Seeba"r/T
++Seeba"r/PT
+ Seebad/T
+ Seebund
+ Seedienst/ET
+@@ -25720,7 +25717,6 @@ Spielanzug/S
+ Spielart/P
+ SpielausschusS/S
+ Spielba"lle/N
+-Spielba"nken
+ Spielball/S
+ Spielbanken
+ SpielbankprozesS/S
+@@ -25966,7 +25962,6 @@ Sprengsa"tze/N
+ Sprengsatz/T
+ Sprengschu"sse/N
+ SprengschusS/S
+-Sprengsto"ffe/N
+ Sprengstoff/T
+ Sprengstoffanschla"ge
+ Sprengstoffanschlag
+@@ -26049,7 +26044,7 @@ Staatenverband
+ Staatenverbund
+ Staatsakt/E
+ Staatsaktion/P
+-Staatsangeho"rige/R
++Staatsangeho"rige
+ Staatsangeho"rigkeit
+ Staatsangelegenheit
+ Staatsanleihe/N
+@@ -26081,7 +26076,7 @@ Staatsform/P
+ Staatsgarantie/N
+ Staatsgeba"ude/S
+ Staatsgebiet
+-Staatsgefangene/NR
++Staatsgefangene/N
+ Staatsgefu"hl
+ Staatsgeheimnis/QS
+ Staatsgelder
+@@ -26399,7 +26394,7 @@ Staubecken/S
+ Staubentwicklung
+ Staubfa"nger/S
+ Staubflocke/N
+-Staubgefa"sS/QS
++Staubgefa"sS/ET
+ Staubko"rnern
+ Staubkorn/S
+ Staublungen
+@@ -27293,9 +27288,9 @@ Sudetenfrage
+ Sudetenkrise
+ Sumpfbo"den
+ Sumpfboden/S
+-Sumpffhu"hner
+-Sumpffhuhn/S
+ Sumpffieber
++Sumpfhu"hner
++Sumpfhuhn/S
+ Sumpfla"nder/N
+ Sumpfland
+ Sumpfpflanze/N
+@@ -27475,7 +27470,7 @@ Tannenza"pfen
+ Tannenzapfen/S
+ Tantalusqual/P
+ Tanzabend/PS
+-Tanzba"r/PS
++Tanzba"r/PT
+ Tanzbein
+ Tanzbo"den
+ Tanzboden
+@@ -27616,7 +27611,7 @@ Teekessel/NS
+ Teelo"ffel/NS
+ Teemaschine/N
+ Teerpappe/N
+-Teerstra"uchen
++Teerstra"uchern
+ Teerstrauch/S
+ Teesieb/EPS
+ Teetasse/N
+@@ -27686,7 +27681,6 @@ Teleskopzylinder
+ Telexdienst/PT
+ Tellermu"tzen
+ Tempelbau
+-Tempelherr/S
+ Tempelraub
+ Tempelritter/NS
+ Tempelscha"ndung/P
+@@ -27969,7 +27963,7 @@ Tischplatte/N
+ Tischrede/N
+ Tischru"cken
+ Tischtelephon/EPS
+-Tischtennis/S
++Tischtennis
+ Tischtu"cher
+ Tischtuch
+ Tischwein/EPS
+@@ -29185,7 +29179,7 @@ Verlagsbuchhandlung/P
+ Verlagsfirma
+ Verlagsfirmen
+ Verlagskontor
+-Verlagspreis/EPS
++Verlagspreis/EPT
+ Verlagsprodukte
+ Verlagswerk/EPT
+ Verlobungsanzeige/N
+@@ -29702,7 +29696,7 @@ Vorstandskra"ften
+ Vorstandsmitglied/T
+ Vorstandsmitgliedern
+ Vorstandssprecher
+-Vorstandsvorsitzende/NR
++Vorstandsvorsitzende/N
+ Vorsteherdru"se/N
+ Vorsteherhund/ET
+ Vorstellungskraft
+@@ -29831,8 +29825,7 @@ Wacholderbranntwein/E
+ Wacholderschna"pse
+ Wacholderschnapses
+ Wacholdersirup/ES
+-Wacholderstra"uchern
+-Wacholderstra"usche
++Wacholderstra"ucher/N
+ Wacholderstrauchs
+ Wacholderwein/E
+ Wachposten/S
+@@ -30196,7 +30189,7 @@ Wartegelder/N
+ Wartungska"stchen
+ Waschanstalten
+ Waschautomat/P
+-Waschba"r/PS
++Waschba"r/PT
+ Waschbecken/S
+ Waschbenzin
+ Waschbrett/S
+@@ -30940,7 +30933,7 @@ Windschutzscheibe/N
+ Windspiel/EPS
+ Windsta"rke/N
+ Windsto"sSe/N
+-WindstosS/S
++WindstosS/T
+ Winkeladvokat/P
+ Winkelanzeige
+ Winkelbereich
+@@ -31895,7 +31888,7 @@ Zwangsherrschaft/P
+ Zwangsidee/N
+ Zwangsinnovation/P
+ Zwangsjacke/N
+-Zwangskolleektivierung
++Zwangskollektivierung
+ Zwangskonkurs/EPT
+ Zwangsneurose/N
+ Zwangspause/N
+@@ -32050,7 +32043,6 @@ affenartig/A
+ affengeil/A
+ afroamerikanisch/A
+ afroasiatisch/A
+-agressionshemmend/A
+ alarmbereit/A
+ allchristlich/A
+ alleinbeauftragt/A
+@@ -32187,7 +32179,6 @@ daraufhinauszielt
+ daru"bergestu"lpt/A
+ deutschfeindlich/A
+ deutschsprachig/A
+-deutschsprechend/A
+ devisenbewirtschaftet/A
+ diamantbesetzt/A
+ dorthingebracht
+@@ -32360,7 +32351,6 @@ grundbuchamtlich/A
+ grundbuchlich/A
+ halbmilita"risch/A
+ halbohnma"chtig/A
+-halbrohreismenge/N
+ halbsitzend/A
+ halbverhungert/A
+ halbverkohlt/A
+@@ -33124,7 +33114,7 @@ preispolitisch/A
+ preisregulierend/A
+ preissenkend/A
+ preistreibend/A
+-prestrigetra"chtig/A
++prestigetra"chtig/A
+ problemorientiert/A
+ prodeutsch/A
+ punktgleich/A
+@@ -33710,7 +33700,6 @@ zuru"ckko"nnen/D
+ zuru"ckkommen/IXD
+ zuru"cklassen/ID
+ zuru"cklegen/IXYD
+-zuru"ckliegen/IXYD
+ zuru"ckmelden/IXYD
+ zuru"ckmu"ssen/D
+ zuru"cknehmen/ID
+@@ -33786,7 +33775,6 @@ zusammenballen/IXYD
+ zusammenbasteln/IXYD
+ zusammenbauen/IXYD
+ zusammenbeisSen/IXD
+-zusammenbekommen/A
+ zusammenbekommen/IXD
+ zusammenberufen/A
+ zusammenbinden/IXD
+@@ -33877,7 +33865,6 @@ zusammengewu"rfelt/A
+ zusammengeza"hlt/A
+ zusammengezogen/A
+ zusammenha"ltst/X
+-zusammenha"ngen/AU
+ zusammenha"ngen/IXD
+ zusammenha"ufen/IXYD
+ zusammenhalten/ID
+--- a/geographie.txt
++++ b/geographie.txt
+@@ -811,7 +811,6 @@ Serbe/FN
+ Serbien
+ Seufzerbru"cke
+ Sibirier/NS
+-Sidnay
+ Siebenbu"rgen
+ Siebengebirge
+ Simbabwe
+--- a/seltenes.txt
++++ b/seltenes.txt
+@@ -465,7 +465,6 @@ hochamtlich/A
+ hochgepa"ppelt/A
+ hochgerutscht/A
+ hochperso"nlich/A
+-hochsa"sig/A
+ hochspekulativ/A
+ hochwu"rdig/A
+ homoerotisch
+@@ -510,7 +509,6 @@ kultisch/A
+ la"nderma"sSig/A
+ laienma"sSig/A
+ lasergedruckt/A
+-legitimisieren/DIOXY
+ leibt
+ letztgeliefert/A
+ liften/IX

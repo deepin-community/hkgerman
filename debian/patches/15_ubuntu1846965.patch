@@ -1,0 +1,36 @@
+Subject: Fix some typos in Bauernbefreiung, Geisterbewegung, Herabsetzung
+From: Roland Rosenfeld <roland@debian.org>
+Date: Wed, 02 Dec 2020 11:01:24 +0100
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/hkgerman/+bug/1846965
+Forwarded: no upstream available
+
+--- a/worte.txt
++++ b/worte.txt
+@@ -7247,7 +7247,7 @@ Henker/NS
+ Henkersmahlzeit
+ Henne/N
+ Herablassung
+-Herabsetztung/P
++Herabsetzung/P
+ Herabstufung
+ Heranziehung
+ Herausarbeitung
+--- a/zusammen.txt
++++ b/zusammen.txt
+@@ -2347,7 +2347,7 @@ Baudarlehen
+ Baudenkma"ler
+ Baudirektor
+ Bauernaufstand
+-Bauernbefeiung
++Bauernbefreiung
+ Bauerndorf
+ Bauernerhebung/P
+ Bauernfa"ngerei
+@@ -9692,7 +9692,6 @@ GeisSbo"cke/N
+ GeisSbock/ST
+ Geisterbeschwo"rer/N
+ Geisterbewegung/P
+-Geisterbwegung/P
+ Geistererscheinung/P
+ Geisterfahrer
+ Geisterhaus

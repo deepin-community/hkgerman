@@ -1,0 +1,274 @@
+This list is located at
+https://www.j3e.de/ispell/hk2/hk2-buglist
+
+0
+< anstössig
+> anstößig
+1
+< Abstosses
+> Abstoßes
+2
+< Affenhausses
+> Affenhauses
+3
+< Aktienpreisses
+> Aktienpreises
+4
+< Ausstosses
+> Ausstoßes
+5
+< Blumenstrausses
+> Blumenstraußes
+6
+< Fortgeschrittenenkursses
+> Fortgeschrittenenkurses
+7
+< Induktionsschlüsses
+8
+< Kapillargefässe
+> Kapillargefäße
+9
+< Klettenverschluß
+> Klettverschluß
+10
+< Kokusnuß
+> Kokosnuß
+11
+< Kokusnußherrscher
+> Kokosnußherrscher
+12
+< Kokusnüssen
+> Kokosnüssen
+13
+< Staubgefässe
+> Staubgefäßes
+14
+< Stewardesses
+> Stewardessen
+15
+< Strausses
+> Straußes
+16
+< Tischtennisses
+17
+< Verlagspreisses
+18
+< Windstosses
+> Windstoßes
+19
+< Zirkusses
+20
+< Annäherungspolitikn
+21
+< Alarmsendungn
+22
+< Bösewichtn
+23
+< Schulfreundn
+24
+< Resumee
+> Resümee
+25
+< Rotkelchen
+> Rotkehlchen
+26
+< Sachbereichn
+27
+< Schutzbefohleneer
+< Schutzbefohleneern
+28
+< Seebäres
+29
+< Brummbäres
+30+31
+< Ameisenbäre
+< Ameisenbärs
+32  ... genitiv von bär ist bären!
+< Bärs
+33
+< Eisbärs
+34
+< Tanzbärs
+35
+< Teddybärs
+36
+< Waschbärs
+37
+< Sprengstöffe
+38
+< Staatsangehörigeer
+39
+< Staatsgefangeneer
+40
+< Stout
+41
+< Tempelherrs
+42
+< Verhöhre
+> Verhöre
+43
+< Vorstandsvorsitzendeer
+44
+< ausgererechnet
+45
+< beizuwohen
+> beizuwohnen
+46
+< eingeforen
+47
+< engültig
+48
+< sozialpotitisch
+49
+< akkreditert
+50
+< exponential
+51
+< gesammte
+52
+< intrumental
+53
+< instrumentell
+54
+< photografisch
+55
+< bahutsam
+56
+< hellbeig
+> hellbeige
+57
+< mittelos
+58
+< überabeitet
+59
+< Zeitläufte
+60
+< Haselsträuche
+> Haselsträucher
+61
+< Teersträuchen
+> Teersträuchern
+62
+< Brombeersträuche
+> Brombeersträucher
+63
+< Himbeersträuche
+> Himbeersträucher
+64
+< Wacholdersträusche
+65
+< irgenwo
+66
+< vorallem
+67
+< zusammenbekommen/A
+68
+< zusammenha"ngen/AU
+69
+< bewiesenermäsen
+> bewiesenermaßen
+70 (by Roland Rosenfeld)
+< Ouput
+> Output
+71 (by Roland Rosenfeld)
+< detailieren
+> detaillieren
+72
+< hochsa"sig
+73
+< behändeeres
+74
+< charakterstarkeres
+75
+< auflagenstarkeres
+76
+< desweiteren
+77
+< unversta"ndlicheierweise
+> unversta"ndlicherweise
+78
+< vorneherein
+79
+< Rally
+> Rallye
+80
+< einfürallemal
+81
+< anbetrachts
+82
+< Parafin
+83
+< Anffälligkeit
+84
+< Auspüffe
+85
+< Briefaufschrifft
+86
+< Pfeiffentabak
+87
+< Sumpffhühner
+< Sumpffhuhn
+88
+< prestrigeträchtig
+> prestigeträchtig
+89
+< Spielba"nken
+90
+< Abpra"lle
+91
+< Aufpra"lle
+92
+< Kna"lle
+92
+< Schwa"lle
+93
+< Sidnay
+94
+< Accessoiry
+< Accessoiries
+95
+< lies/A
+96
+< wohlauf/A
+97
+< Optimier/N
+98
+< zuru"ckliegen/Y
+> zuru"cklag/Z
+99
+< Aquisition
+100
+< Aquisiteur
+101 (by Roland Rosenfeld)
+< .*tuen
+102
+< legitimisieren
+103
+< Kontinentalplateaux
+104
+< halbrohreismenge
+105
+< indexieren
+106
+< Indexierung
+107
+< boolesch
+> boolsch
+108
+< deutschsprechen
+109
+< agressionshemmend
+110
+< Agressivita"t
+> Aggressivita"t
+111
+< Agression
+112
+< Altenwohnstift
+
+... there are hundreds of other nasty bugs in the hk dictionary but I stopped
+this list at this point.
+
+To see more bugs make a diff between 'isowordlist' of igerman98-19991219
+an igerman98-`mostrecentversion` and grep for words that disappeared.
+

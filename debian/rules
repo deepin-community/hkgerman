@@ -1,0 +1,66 @@
+#!/usr/bin/make -f
+#
+# (C) 1999-2020 Roland Rosenfeld <roland@debian.org>, based on
+#
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+#export DH_OPTIONS=-v
+
+# some of the SED scripts require uni-byte characters:
+export LC_ALL=C
+
+DROOT=`pwd`/debian
+ADIR=$(DROOT)/aspell-de-1901
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	$(MAKE) all.words
+	$(MAKE) isowordlist
+	$(MAKE) myspelldic
+	$(MAKE) aspell
+
+override_dh_clean:
+	dh_clean
+	[ ! -f Makefile ] || $(MAKE) clean
+	rm -f debian/iogerman.config debian/iogerman.templates
+	rm -f debian/wogerman.config debian/wogerman.templates
+
+override_dh_install-indep:
+	dh_install
+#	iogerman (binary-indep):
+	iconv -f iso-8859-1 -t utf-8 < deutsch.aff \
+		> $(DROOT)/iogerman/usr/lib/ispell/ogerman.aff
+	gzip -9n < all.words > $(DROOT)/iogerman/usr/share/ispell/ogerman.mwl.gz
+	(cd $(DROOT)/iogerman/usr/lib/ispell; \
+		ln -s ogerman.aff odeutsch.aff; \
+		ln -s ogerman.hash odeutsch.hash;)
+
+#	wogerman (binary-indep):
+	iconv -f iso-8859-1 -t utf-8 < isowordlist \
+		> $(DROOT)/wogerman/usr/share/dict/ogerman
+
+#	myspell-de-de-1901 (binary-indep):
+	iconv -f iso-8859-1 -t utf-8 < myspell.dic \
+	  > $(DROOT)/myspell-de-de-1901/usr/share/hunspell/de_DE-1901.dic
+	iconv -f iso-8859-1 -t utf-8 < myspell.aff \
+	  | sed -e 's/^SET ISO8859-1/SET UTF-8/' \
+	  > $(DROOT)/myspell-de-de-1901/usr/share/hunspell/de_DE-1901.aff
+
+#	aspell (binary-indep):
+	$(MAKE) DESTDIR=$(ADIR) aspell-install
+	gzip -9n < de-common-1901.cwl \
+		> $(ADIR)/usr/share/aspell/de-common-1901.cwl.gz
+	gzip -9n < de_CH-only-1901.cwl \
+		> $(ADIR)/usr/share/aspell/de_CH-only-1901.cwl.gz
+	gzip -9n < de_DE-only-1901.cwl \
+		> $(ADIR)/usr/share/aspell/de_DE-only-1901.cwl.gz
+
+	installdeb-wordlist -pwogerman # Internally calls dh_installdebconf
+	installdeb-hunspell -pmyspell-de-de-1901
+	installdeb-aspell -paspell-de-1901
+	installdeb-ispell -piogerman  # Internally calls dh_installdebconf
+
+override_dh_installchangelogs:
+	dh_installchangelogs Changes

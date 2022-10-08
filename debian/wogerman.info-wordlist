@@ -1,0 +1,9 @@
+Language: deutsch (Old German)
+Hash-Name: ogerman
+Emacsen-Name: german-old8
+Casechars: [A-Za-zÄÖÜäöüß]
+Not-Casechars: [^A-Za-zÄÖÜäöüß]
+Many-Otherchars: no
+Additionalchars: ÄÖÜäöüß
+Ispell-Args: -C -d ogerman
+Coding-System: utf-8

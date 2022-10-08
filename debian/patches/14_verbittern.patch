@@ -1,0 +1,17 @@
+Subject: Fix typo in "verbittern"
+From: Roland Rosenfeld <roland@debian.org>
+Date: Sun, 11 Oct 2020 11:48:03 +0200
+Bug-Debian: https://bugs.debian.org/971648
+Forwarded: no upstream available
+
+--- a/verben.txt
++++ b/verben.txt
+@@ -6705,7 +6705,7 @@ verbreitern/DIXY
+ verbriefen/DIOXY
+ verbru"dern/DIOXY
+ verbru"hen/DIOXY
+-verbttern/DIOXY
++verbittern/DIOXY
+ verbu"nden/DIXY
+ verbu"rgen/DIOXY
+ verbu"sSen/DIOXY

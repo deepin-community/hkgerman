@@ -1,0 +1,30 @@
+Subject: Use utf-8 instead of iso-8859-1 for all dictionaries
+From: Roland Rosenfeld <roland@debian.org>
+Date: Wed, 02 Dec 2020 12:11:39 +0100
+Forwarded: no upstream available
+
+--- a/deutsch.aff
++++ b/deutsch.aff
+@@ -266,14 +266,14 @@ altstringchar	SS	Ss  # using two definit
+              		    # the same time :-|
+ altstringchar	ss	ss
+ altstringchar	SS	SS  # this definition is used for checking
+-altstringchar	à	à
+-altstringchar	ç	ç
+-altstringchar	Ç	Ç
+-altstringchar	é	é
+-altstringchar	ë	ë
+-altstringchar	ê	ê
+-altstringchar	ï	ï
+-altstringchar	ñ	ñ
++altstringchar	\340	à
++altstringchar	\347	ç
++altstringchar	\307	Ç
++altstringchar	\351	é
++altstringchar	\353	ë
++altstringchar	\352	ê
++altstringchar	\357	ï
++altstringchar	\361	ñ
+ 
+ #
+ # Alternate forms for ISO latin1 charset

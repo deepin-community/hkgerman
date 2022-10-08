@@ -1,0 +1,40 @@
+Description: fix several typos in the dictionary.
+Author: Roland Rosenfeld <roland@debian.org>
+Forwarded: no upstream available
+
+--- a/Makefile
++++ b/Makefile
+@@ -13,9 +13,9 @@ all.words: $(WORTE)
+ 	sort -u *.txt > $@
+ 
+ myspelldic: deutsch.hash
+-	./myspellfixprefix.pl < all.words |sort -u |./uniqflag.pl > myspell.dic.tmp
++	perl myspellfixprefix.pl < all.words |sort -u | perl uniqflag.pl > myspell.dic.tmp
+ 	wc -l myspell.dic.tmp |sed "s/ *\([0-9]*\) .*/\1/g" > myspell.dic
+-	./dic2iso <myspell.dic.tmp >> myspell.dic
++	sed -f dic2iso <myspell.dic.tmp >> myspell.dic
+ 	rm myspell.dic.tmp
+ 
+ isowordlist: deutsch.hash
+--- a/informatik.txt
++++ b/informatik.txt
+@@ -717,7 +717,7 @@ Nadeldrucker
+ Namensgleichheit
+ Namenskonflikt/EPT
+ Namensraum/ST
+-Nebenlau"figkeit
++Nebenla"ufigkeit
+ Netzadresse/N
+ Netzdienst/EPT
+ Netzkommunikation
+--- a/zusammen.txt
++++ b/zusammen.txt
+@@ -30872,7 +30872,7 @@ Wiederaufru"stung/P
+ Wiederbelebungsversuch/EPST
+ Wiedereinfahren
+ Wiedergutmachungsgesetz
+-Wiedervereinigtungsfrage
++Wiedervereinigungsfrage
+ Wiederverheiratung/P
+ Wiederverka"ufer/NS
+ Wiederverkaufspreis/EPT

@@ -1,0 +1,28 @@
+Language: deutsch, alte Rechtschreibung (German, traditional spelling)
+Hash-Name: de-1901
+Emacsen-Name: de-1901, deutsch-alt
+Casechars: [A-Za-zäöüßÄÖÜ]
+Not-Casechars: [^A-Za-zäöüßÄÖÜ]
+Additionalchars: äöüßÄÖÜ
+Coding-System: utf-8
+Aspell-Locales: de-1901
+Auto-Compat: de-1901
+Auto-Contents: de-1901
+
+Language: deutsch/Deutschland, alte Rechtschreibung (German/Germany, traditional spelling)
+Hash-Name: de_DE-1901
+Emacsen-Name: de_DE-1901
+Casechars: [A-Za-zäöüßÄÖÜ]
+Not-Casechars: [^A-Za-zäöüßÄÖÜ]
+Additionalchars: äöüßÄÖÜ
+Coding-System: utf-8
+Aspell-Locales: de_DE-1901
+
+Language: deutsch/Schweiz, alte Rechtschreibung (German/Switzerland, old spelling)
+Hash-Name: de_CH-1901
+Emacsen-Name: de_CH-1901
+Casechars: [A-Za-zäöüÄÖÜ]
+Not-Casechars: [^A-Za-zäöüÄÖÜ]
+Additionalchars: äöüÄÖÜ
+Coding-System: utf-8
+Aspell-Locales: de_CH-1901

@@ -1,0 +1,8 @@
+# This isn't a syntax error but a cite from a mail from the upstream author,
+# so it isn't a good idea to change the wording of this cite:
+aspell-de-1901: spelling-error-in-copyright "GNU Public License" "GNU General Public License"
+
+# Aspell internally works with 8bit for performance.  The user can use UTF-8.
+# See aspell-doc/aspell.html/Notes-on-8_002dbit-Characters.html:
+aspell-de-1901: national-encoding usr/lib/aspell/de-1901_affix.dat
+aspell-de-1901: national-encoding usr/lib/aspell/de-1901_phonet.dat

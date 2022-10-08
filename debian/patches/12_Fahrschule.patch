@@ -1,0 +1,16 @@
+Description: Add singular "Fahrschule" to dictionary.
+Author: Roland Rosenfeld <roland@debian.org>
+Bug-Debian: https://bugs.debian.org/854785
+Forwarded: no upstream available
+
+--- a/zusammen.txt
++++ b/zusammen.txt
+@@ -7138,7 +7138,7 @@ Fahrrinne/N
+ Fahrschein/PS
+ Fahrscheinsorten
+ Fahrschu"ler/FNS
+-Fahrschulen
++Fahrschule/N
+ Fahrschullehrer
+ Fahrsport
+ Fahrstrecke

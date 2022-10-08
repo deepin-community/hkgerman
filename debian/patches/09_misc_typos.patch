@@ -1,0 +1,73 @@
+Description: fix several typos in the dictionary.
+Author: Roland Rosenfeld <roland@debian.org>
+Forwarded: no upstream available
+
+--- a/adjektive.txt
++++ b/adjektive.txt
+@@ -3032,7 +3032,6 @@ fo"deralistisch/A
+ fo"derativ/A
+ fo"rderlich/AC
+ fo"rderungsbedu"rftig/A
+-fo"rmig/AU
+ fo"rmlich/ACU
+ folgenreich/A
+ folgenschwer/AC
+@@ -3955,7 +3954,6 @@ geschrammt/A
+ geschraubt/A
+ geschrieben/AU
+ geschrieen/A
+-geschritt/A
+ geschro"pft/A
+ geschrubbt/A
+ geschrumpft/A
+--- a/verben.txt
++++ b/verben.txt
+@@ -1328,7 +1328,7 @@ ausliesS/Z
+ auslisten/DIXY
+ auslo"schen/DIXY
+ auslo"sen/DIXY
+-auslooten/DIXY
++ausloten/DIXY
+ auslosen/DIXY
+ auslu"ften/DIXY
+ ausmachen/DIXY
+--- a/zusammen.txt
++++ b/zusammen.txt
+@@ -3079,7 +3079,7 @@ BetriebsschliesSung
+ Betriebsschreinereien
+ Betriebssituation/P
+ Betriebssoftware
+-Betriebsspannnung
++Betriebsspannung
+ Betriebsstoffe/N
+ Betriebsstop
+ Betriebsstrom
+@@ -19574,8 +19574,8 @@ Negerkindern
+ Negerkirche
+ Negerlein
+ Negersa"ngerin
+-Negerskalverei
+-Negerskave
++Negersklaverei
++Negersklave
+ Negersta"mme
+ Negerstudent
+ NeigungsmesSgera"t
+@@ -22775,7 +22775,7 @@ Rheinschiffahrt
+ Rheinufer
+ Rheinverkehr
+ Rheinwein
+-Rhodesienkonflik
++Rhodesienkonflikt
+ Rhombenmuster
+ Richteramt
+ Richtermiene
+@@ -30362,7 +30362,7 @@ Wasserwerfer/NS
+ Wasserwerk/PS
+ Watteba"usche/N
+ Wattebausch/T
+-Wattenmehr
++Wattenmeer
+ Wattepropf/EPS
+ Wattleistung/P
+ Watvo"gel

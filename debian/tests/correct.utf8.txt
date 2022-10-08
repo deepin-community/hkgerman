@@ -1,0 +1,26 @@
+Dies ist ein korrekter deutscher Text.
+Ich glaube, daß hier keine Fehler versteckt sind.
+Gemüse und Übersinnliches enthalten Umlaute.
+Noch ein paar Tests aus alten Fehlerberichten, die inzwischen
+korrigiert sein sollten:
+- akkreditiert
+- anstößig
+- Output
+- detailliert
+- referentielle
+- Nebenläufigkeit
+- Wiedervereinigungsfrage
+- Intelligenz
+- ausloten
+- Betriebsspannung
+- Negersklave
+- Rhodesienkonflikt
+- Wattenmeer
+- Fahrschule
+- Binärbäume
+- Außenministerkonferenz
+- Atomzertrümmerung
+- verbittern
+- Bauernbefreiung
+- Geisterbewegung
+- Herabsetzung

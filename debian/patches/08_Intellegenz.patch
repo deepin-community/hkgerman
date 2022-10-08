@@ -1,0 +1,15 @@
+Description: Remove "Intellegenz" (correct: "Intelligenz").
+Author: Roland Rosenfeld <roland@debian.org>
+Bug-Debian: http://bugs.debian.org/269391
+Forwarded: no upstream available
+
+--- a/worte.txt
++++ b/worte.txt
+@@ -7792,7 +7792,6 @@ IntegrationsprozesS/QS
+ Integrationsvorteil/EPS
+ Integrierbarkeit
+ Integrita"t
+-Intellegenz
+ Intellekt
+ Intelligenz/P
+ Intelligenzbestie/N

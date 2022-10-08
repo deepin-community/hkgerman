@@ -1,0 +1,11 @@
+Tests: wogerman-utf8, wogerman-dass
+Depends: wogerman
+
+Tests: ispell-ok, ispell-typos, ispell-latin1-ok, ispell-latin1-typos
+Depends: iogerman, ispell
+
+Tests: aspell-de-de-ok, aspell-de-de-typos, aspell-de-ch-ok
+Depends: aspell-de-1901, aspell
+
+Tests: myspell-ok, myspell-typos
+Depends: myspell-de-de-1901, hunspell

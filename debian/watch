@@ -1,0 +1,6 @@
+# See uscan(1) for format
+
+version=4
+
+#opts=pasv ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/hk(.+)-deutsch\.tar\.gz
+https://www.j3e.de/ispell/hk2/hk(.+)-deutsch.tar.gz

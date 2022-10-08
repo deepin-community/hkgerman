@@ -1,0 +1,438 @@
+hkgerman (1:2-37) unstable; urgency=medium
+
+  * 13_Atomzertruemmerung: Fix typo in Atomzertrümmerung (Closes: #971646).
+  * Fix some DEP-3 headers in patches.
+  * 14_verbittern: Fix typo in "verbittern" (Closes: #971648).
+  * Add more tests for fixed typos.
+  * 15_ubuntu1846965: Fix typos in "Bauernbefreiung", "Geisterbewegung",
+    "Herabsetzung" (Fixes LP 1846965).
+  * Update standards version to 4.5.1, no changes needed.
+  * Use utf-8 instead of iso-8859-1 for ispell/myspell dictionaries.
+  * Stay with 8bit iso-8859-1 for aspell internally for performance.
+  * Add tests for ispell with utf8 charset.
+
+ -- Roland Rosenfeld <roland@debian.org>  Wed, 02 Dec 2020 14:30:39 +0100
+
+hkgerman (1:2-36) unstable; urgency=medium
+
+  * Update lintian overrides (quotes added).
+  * Update standards version to 4.5.0, no changes needed.
+  * Rename gitlab-ci.yml to salsa-ci.yml.
+  * Update debian/watch to version=4.
+  * wogerman: change info-wordlist to utf-8, since wordlist is already
+    utf-8.  Recode special chars to utf-8.
+  * Update debhelper to v13.
+  * Add "Forwarded: no upstream available" to all patches.
+  * Update hk2-buglist source and convert it to utf-8.
+
+ -- Roland Rosenfeld <roland@debian.org>  Sun, 30 Aug 2020 13:02:04 +0200
+
+hkgerman (1:2-35) unstable; urgency=medium
+
+  * Add buildlog to gitlab-ci test pipeline.
+  * Use installdeb-hunspell instead of installdeb-myspell.
+  * Add myspell-de-de-1901.info-hunspell.
+  * Build-depend on debhelper-compat (= 12) instead of using d/compat.
+  * d/gitlab-ci.yml stripped down using pipline-jobs.yml
+
+ -- Roland Rosenfeld <roland@debian.org>  Fri, 01 Feb 2019 21:59:25 +0100
+
+hkgerman (1:2-34) unstable; urgency=medium
+
+  [ Roland Rosenfeld ]
+  * Avoid duplicate trap execution in debian/tests.
+
+  [ Ondřej Nový ]
+  * d/tests: Use AUTOPKGTEST_TMP instead of ADTTMP
+
+  [ Roland Rosenfeld ]
+  * d/tests: Fix leftover ADTTMP.
+  * Add salsa CI pipeline in debian/gitlab-ci.yml.
+  * Upgrade to Standards-Version 4.3.0 (Declare Rules-Requires-Root: no).
+  * d/rules: install files with user rights to allow R-R-R: no.
+  * Update debhelper to v12.
+
+ -- Roland Rosenfeld <roland@debian.org>  Fri, 04 Jan 2019 12:44:12 +0100
+
+hkgerman (1:2-33) unstable; urgency=medium
+
+  * Point upstream source location to a mirror in copyright and watch.
+  * Update to Standards-Version 4.1.3 (no changes).
+  * Update debhelper from v9 to v11.
+  * Mark myspell-de-de-1901 to Multi-Arch: foreign.
+  * Add Vcs headers pointing to salsa.debian.org.
+  * Add some autopkgtests.
+
+ -- Roland Rosenfeld <roland@debian.org>  Fri, 16 Feb 2018 22:22:43 +0100
+
+hkgerman (1:2-32) unstable; urgency=medium
+
+  * Remove wogerman.copyright and use global copyright instead.
+  * 12_Fahrschule: Add singular "Fahrschule" to dictionary.
+  * Drop transitional packages aspell-de-alt and myspell-de-de-oldspell.
+  * Move all packages to Section: localization.
+  * Replace Priority "extra" with "optional".
+  * Update to Standards version 4.1.1: change copyright-format to https.
+
+ -- Roland Rosenfeld <roland@debian.org>  Fri, 03 Nov 2017 16:04:10 +0100
+
+hkgerman (1:2-31) unstable; urgency=medium
+
+  * Add -p to QUILT_DIFF_OPTS.
+  * Remove trailing whitespaces from patches.
+  * 10_aspell: use grep -a to avoid problems with grep 2.23, which doesn't
+    accept latin1 chars on C locale.
+  * Run wrap-and-sort.
+  * Upgrade to Standards-Version 3.9.8 (no changes).
+  * Change debian/copyright to copyright-format 1.0.
+  * Add original ftp server to debian/watch.
+  * Install myspell dictionary as de_DE-1901 and stop conflicting other
+    de_DE dictionaries (Closes: #663176).
+  * Rename myspell-de-de-oldspell to myspell-de-de-1901 (Closes: #335850).
+  * Update package descriptions.
+  * Remove aspell-de-alt.postrm, because it is empty.
+  * Install aspell dictionaries as de_(DE|CH)-1901 and allow using it
+    in parallel to 1996 dictionaries (Closes: #470917).
+  * Rename aspell-de-alt to aspell-de-1901.
+
+ -- Roland Rosenfeld <roland@debian.org>  Sun, 17 Apr 2016 15:58:55 +0200
+
+hkgerman (1:2-30) unstable; urgency=medium
+
+  * Run wrap-and-sort.
+  * Using ispell-autobuildhash:
+    - debian/rules: Adapted to use this system
+    - debian/control: Changed Architecture from any to all and
+      Build-Depends to Build-Depends-Indep.
+    - 11_wordlists: Move wordlists from debian/rules to Makefile.
+  * Depend on ${misc:Depends} instead of various debconf versions.
+  * Add ${perl:Depends} to iogerman and wogerman, since they use perl via
+    debconf.
+  * Use ${aspell:Depends} for auto generating aspell-de-alt.
+  * Switch from classic debhelper to dh.
+  * Convert wogerman wordlist from iso-8859-1 to utf-8.
+  * Use isowordlist instead of only removing affixes.
+  * Update debian/compat to 9.
+  * Adapt aspell-de-alt installation to the one of aspell-de.
+  * Update aspell-de-alt.info-aspell similar to the one of aspell-de.
+  * Remove old junk from aspell-de-alt.post(inst|rm).
+  * Remove filter for broken aspell munchlist output.  This is obsolete
+    with the current aspell version.
+
+ -- Roland Rosenfeld <roland@debian.org>  Wed, 30 Dec 2015 22:41:46 +0100
+
+hkgerman (1:2-29) unstable; urgency=low
+
+  * Split 2-28.diff into several quilt (3.0) format patches.
+  * Upgrade to Standards-Version 3.9.6 (no changes).
+  * Set LC_ALL=C in debian/rules, since some sed scripts require unibyte
+    charset.
+  * Run gzip -n to make build reproducible.
+
+ -- Roland Rosenfeld <roland@debian.org>  Fri, 21 Aug 2015 12:17:51 +0200
+
+hkgerman (1:2-28) unstable; urgency=low
+
+  * Build against a recent dictionaries-common-dev to no
+    longer install ancient openoffice snippets for myspell-de-de-oldspell
+    package (Closes: #629078).
+  * No longer create ancient /usr/share/myspell stuff (Closes: #566805).
+  * Thanks to Agustin Martin for providing patches.
+  * Add ${misc:Depends} to package dependencies.
+  * Add debian/source/format 1.0.
+  * Add build-arch/build-indep to debian/rules.
+  * Upgrade to Standards-Version 3.9.2 (no changes).
+  * Add debian/watch that explains that package is no longer maintained
+    upstream.
+  * Change Conflicts with version to Breaks.
+  * Remove article from beginning of Description.
+  * Add lintian-overrides files to avoid warning about spelling error in
+    copyright files, that are part of a cite of a mail of the upstream
+    author, that shouldn't be corrected but kept unchanged.
+  * Add copyright notice to wogerman.
+
+ -- Roland Rosenfeld <roland@debian.org>  Sat, 08 Oct 2011 16:48:30 +0200
+
+hkgerman (1:2-27) unstable; urgency=low
+
+  * Build-Depends/Depends on ispell >= 3.3.02
+
+ -- Roland Rosenfeld <roland@debian.org>  Sun, 13 Mar 2011 19:28:50 +0100
+
+hkgerman (1:2-26) unstable; urgency=low
+
+  * myspell-de-de-oldspell now conflicts with hunspell-de-de and
+    hunspell-de-de-frami (Closes: #557051).
+  * Refer to GPL-2 in copyright file.
+  * Upgrade to Standards-Version 3.8.3 (no changes).
+
+ -- Roland Rosenfeld <roland@debian.org>  Sun, 06 Dec 2009 14:25:33 +0100
+
+hkgerman (1:2-25.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * move dict to /usr/share/hunspell and add compat symlinks
+    from /usr/share/myspell/dicts (closes: #541932)
+  * utf8'ize copyright
+
+ -- Rene Engelhard <rene@debian.org>  Wed, 23 Sep 2009 20:09:45 +0200
+
+hkgerman (1:2-25) unstable; urgency=low
+
+  * Add aspell support based on code from old aspell-de-alt package.
+  * Have to increase the epoch, because aspell-de-alt was version 2.1
+    before (don't ask me, where this version comes from).
+  * Update FSF address in copyright.
+  * Filter debug output of broken aspell 0.60.5-1 munchlist command
+    using "grep -v '^\(XXX\|>>>\)'" when creating aspell dictionaries
+    (see #428285).
+
+ -- Roland Rosenfeld <roland@debian.org>  Sun, 29 Jul 2007 00:22:24 +0200
+
+hkgerman (2-24) unstable; urgency=low
+
+  * s/Betriebsspannnung/Betriebsspannung/ (Closes: #295140).
+  * Several fixes (Closes: #295158):
+    - s/auslooten/ausloten/
+    - remove fo"rmig/AU (only used in compounds)
+    - remove geschritt/A (not a German word)
+    - s/Negerskalverei/Negersklaverei/
+    - s/Negerskave/Negersklave/
+    - s/Rhodesienkonflik/Rhodesienkonflikt/
+    - remove Stechzikel/S (Stechzirkel is already in dictionary)
+    - s/Wattenmehr/Wattenmeer/
+  * Upgrade to Standards-Version 3.7.2 (no changes).
+  * Upgrade to debhelper 5.
+  * Mention the IANA name (de-DE-1901) in the package descriptions.
+
+ -- Roland Rosenfeld <roland@debian.org>  Sun,  7 Jan 2007 15:54:38 +0100
+
+hkgerman (2-23) unstable; urgency=low
+
+  * Upgrade to Standards-Version 3.6.2 (no changes).
+  * Depend on debconf (>= 0.5) | debconf-2.0.
+
+ -- Roland Rosenfeld <roland@debian.org>  Mon, 26 Sep 2005 21:22:32 +0200
+
+hkgerman (2-22) unstable; urgency=low
+
+  * Remove "Intellegenz" (correct: "Intelligenz") (Closes: #269391).
+  * Convert changelog from iso-8859-1 to utf-8.
+
+ -- Roland Rosenfeld <roland@debian.org>  Sun, 12 Sep 2004 17:53:27 +0200
+
+hkgerman (2-21) unstable; urgency=low
+
+  * Added versioned dependency on dictionaries-common to [wi]ogerman.
+
+ -- Roland Rosenfeld <roland@debian.org>  Fri, 13 Feb 2004 18:07:50 +0100
+
+hkgerman (2-20) unstable; urgency=low
+
+  * Rebuild with new dictionaries-common-dev 0.20.0 (Closes: #232161,
+    #232180).
+
+ -- Roland Rosenfeld <roland@debian.org>  Wed, 11 Feb 2004 18:35:09 +0100
+
+hkgerman (2-19) unstable; urgency=low
+
+  * Corrected wrong spellings:
+    - s/Nebenlaüfigkeit/Nebenläufigkeit/ (Closes: #210187).
+    - s/Wiedervereinigtungsfrage/Wiedervereinigungsfrage/ (Closes: #210193).
+  * Run ogerman wordlist through sort -u to avoid duplicates
+    (Closes: #210188).
+  * Add myspell support (package myspell-de-de-oldspell) mostly provided
+    by Rene Engelhard <rene@debian.org> (Closes: #210430).
+
+ -- Roland Rosenfeld <roland@debian.org>  Sat,  7 Feb 2004 13:16:15 +0100
+
+hkgerman (2-18) unstable; urgency=low
+
+  * Corrected wrong spellings: Brustbeschwerde, Redaktionsmitgliede,
+    Wiederstand. Thanks to Bjoern Jacke <bjoern@j3e.de>.
+  * s/Planungskozept/Planungskonzept/. Thanks to Frederik Ramm
+    <frederik@remote.org>.
+  * Apply hkgerman_2-patch-bj1.diff.gz by Bjoern Jacke <bjoern@j3e.de>,
+    which optimizes affix file, corrects some spellings and scripts.
+  * Upgrade to Standards-Version 3.6.1 (no changes).
+  * Upgrade to debhelper 4:
+    - debian/compat
+    - optimize rules according to debhelper/examples/rules.multi.
+    - Build-Depend on debhelper (>= 4.0.0)
+  * s/Außenministerkonfernz/Außenministerkonferenz/ (Closes: #204370).
+  * s/Binärbaüme/Binärbäume/ (Closes: #209401).
+
+ -- Roland Rosenfeld <roland@debian.org>  Tue,  9 Sep 2003 20:53:47 +0200
+
+hkgerman (2-17) unstable; urgency=low
+
+  * Add UTF8 support to affix file (Thanks to Bjoern Jacke <bjoern@j3e.de>
+    for providing the patch).
+  * s/german/German/ in copyright files to make lintian happy.
+  * Remove trailing dot from descriptions to make lintian happy.
+  * Upgrade Standards-Version to 3.5.8 (no changes).
+
+ -- Roland Rosenfeld <roland@debian.org>  Sun,  1 Dec 2002 15:38:07 +0100
+
+hkgerman (2-16) unstable; urgency=low
+
+  * Recompile with dictionaries-common-dev >= 0.8.4.
+
+ -- Roland Rosenfeld <roland@debian.org>  Sat, 26 Oct 2002 09:40:39 +0200
+
+hkgerman (2-15) unstable; urgency=low
+
+  * First official dictionaries-common release
+    (Closes: #43173, #94556, #164245, #164265).
+  * Correct handling of 'ss' and 'SS' in HTML affix file (Closes: #154568).
+  * Upgrade Standards-Version to 3.5.7.
+  * iogerman now depends on ispell.
+  * Many-Otherchars in info files corrected to "no":
+  * Locale set in info files to "de_DE".
+  * s/referenziell/referentiell/ (Closes: #137094).
+  * Downgrade Pre-Depends: dictionaries-common to Depends.
+
+ -- Roland Rosenfeld <roland@debian.org>  Sun, 13 Oct 2002 17:45:27 +0200
+
+hkgerman (2-14) unstable; urgency=low
+
+  * Now use new dictionaries-common support.
+  * Use dictionaries-common-dev 0.4.99.14 and new policy now.
+  * Recompile with ispell 3.1.20-30.
+  * Renamed igerman to iogerman and wgerman to wogerman to show that this
+    is the old German orthography, which will be replaced by [iw]ngerman
+    at least at 2005-08-01.
+  * Add debian/iogerman.info-ispell and debian/wogerman.info-wordlist.
+  * Add installdeb-wordlist and installdeb-ispell to debian/rules.
+  * Build-Depends on dictionaries-common-dev now.
+  * Add dependencies on debconf to wogerman and iogerman.
+  * Remove wordlist deutsch in rules/clean.
+  * Changed to debhelper.
+
+ -- Roland Rosenfeld <roland@debian.org>  Wed, 27 Feb 2002 21:07:09 +0100
+
+hkgerman (2-13) unstable; urgency=low
+
+  * New Debian maintainer (Closes: #130824).
+  * Merge new hk2-buglist from http://lisa.goe.net/~bjacke/igerman98/dict/
+  * Add SGML-, HTML-, and XML-entities to affix file.
+  * Merge stringchars etc. from igerman98, which seem to be more up to
+    date.
+  * Removed special handling for "wir tuen" from deutsch.aff, because
+    Duden says "wir tun".
+  * s/referentiell/referenziell/
+  * s/Zwangskolleektivierung/Zwangskollektivierung/ (Closes: #134586).
+
+ -- Roland Rosenfeld <roland@debian.org>  Sun, 24 Feb 2002 22:14:51 +0100
+
+hkgerman (2-12) unstable; urgency=low
+
+  * hkgerman is now GPL. (closes: #131124)
+  * fixing description. (closes: #124752, #125479)
+  * applied (partly) buglist from suse (closes: #28526)
+  * changed order in deutsch.aff (closes: #90482)
+  * fixed upstream-authors address.
+
+ -- Cord Beermann <cord@debian.org>  Fri,  1 Feb 2002 20:45:44 +0100
+
+hkgerman (2-11) unstable; urgency=low
+
+  * Orphaned this package.
+
+ -- Adrian Bunk <bunk@fs.tum.de>  Fri, 25 Jan 2002 12:51:50 +0100
+
+hkgerman (2-10) unstable; urgency=low
+
+  * Added the missing build dependency on ispell. (closes: #94552)
+  * Renamed words.5 to words-german.5 . (closes: #94359)
+
+ -- Adrian Bunk <bunk@fs.tum.de>  Mon, 23 Apr 2001 02:00:18 +0200
+
+hkgerman (2-9) unstable; urgency=low
+
+  * Changed igerman to be binary-any again. There was a reason
+    why it shouldn't be binary-all...
+
+ -- Adrian Bunk <bunk@fs.tum.de>  Tue, 17 Apr 2001 14:00:11 +0200
+
+hkgerman (2-8) unstable; urgency=low
+
+  * New maintainer. (closes: #90362)
+  * Made igerman binary-all.
+  * Use update-alternatives in wgerman. (closes: #27954, #43172)
+  * Removed the obsolete README.debian.
+  * Added "-isp" to dpkg-gencontrol in debian/rules.
+  * /usr/doc -> /usr/share/doc (closes: #91514, #91700)
+  * /usr/man -> /usr/share/man (closes: #91082)
+  * /usr/dict -> /usr/share/dict (closes: #87290)
+  * Added build dependencies.
+  * Standards-Version: 3.5.2
+
+ -- Adrian Bunk <bunk@fs.tum.de>  Thu, 12 Apr 2001 13:17:58 +0200
+
+hkgerman (2-7.1) unstable; urgency=low
+
+  * Non maintainer upload with permission of maintainer.
+  * Merged in hk2-buglist from
+    http://members.xoom.com/_XOOM/maccy/ispell/dict/, thanks to Björn
+    Jacke <bjoern.jacke@gmx.de> (Fixes: #28526).
+  * Added alphabeta.txt and roemisch.txt to dictionary.
+  * Convert "sS" to "ß" in diacrit7to8 (Fixes: #42245).
+  * Compress changelog.Debian.
+  * Mention in control that this refers to the old German orthography.
+
+ -- Roland Rosenfeld <roland@debian.org>  Thu, 14 Oct 1999 20:52:19 +0200
+
+hkgerman (2-7) unstable; urgency=low
+
+  * make clean should not remove the debian/CVS directory
+    (when present).
+  * wgerman provides wordlist (Bug#9396).
+  * affix shortcuts removed when creating wgerman dictionary.
+  * debian/rules clean now removes left over debian/*.deb
+    files.
+
+ -- Juergen Menden <menden@morgana.camelot.de>  Thu, 29 May 1997 00:03:26 +0200
+
+hkgerman (2-6) unstable; urgency=low
+
+  * converted to the new source package format.
+  * new maintainer.
+
+ -- Juergen Menden <menden@morgana.camelot.de>  Sun, 20 Apr 1997 17:14:25 +0200
+
+hkgerman (2-5) unstable; urgency=low
+
+  * igerman now provides ispell-dictionary (Bug#3503)
+  * gzip manpage
+
+ -- Michael Meskes <meskes@debian.org>  Thu,  4 Jul 1996 09:05:11 +0200
+
+hkgerman (2-4) unstable; urgency=low
+
+  * Adapted to new naming scheme
+  * Both packages now have an extended description
+  * Don't create adirectory for copyright file
+
+ -- Michael Meskes <meskes@debian.org>  Fri, 28 Jun 1996 21:35:38 +0200
+
+hkgerman (2-3) unstable; urgency=low
+
+  * Finally translated the german part of the copyright file.
+  * Combined doc files
+
+ -- Michael Meskes <meskes@debian.org>  Tue, 14 May 1996 14:07:58 +0200
+
+hkgerman (2-2) unstable; urgency=low
+
+  * Corrected copyright file.
+
+ -- Michael Meskes <meskes@debian.org>  Mon, 13 May 1996 13:33:24 +0200
+
+hkgerman (2-1) unstable; urgency=low
+
+  * Upgraded to affix version 1.7
+  * Added new dictionary by Heinz Knutzen <hk@informatik.uni-kiel.d400.de>
+  * New maintainer
+
+ -- Michael Meskes <meskes@debian.org>  Thu, 25 Apr 1996 13:38:28 +0200

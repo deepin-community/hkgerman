@@ -1,0 +1,17 @@
+Subject: Fix typo in Atomzertrümmerung
+From: Roland Rosenfeld <roland@debian.org>
+Date: Sun, 11 Oct 2020 11:39:48 +0200
+Bug-Debian: https://bugs.debian.org/971646
+Forwarded: no upstream available
+
+--- a/zusammen.txt
++++ b/zusammen.txt
+@@ -1399,7 +1399,7 @@ Atomwaffenherstellung
+ Atomwaffenversuche
+ Atomwissenschaftler
+ Atomzeitalter/S
+-Atomzerstru"mmerung
++Atomzertru"mmerung
+ Attentatsdrohung/P
+ Attentatsopfer
+ Attentatsserie

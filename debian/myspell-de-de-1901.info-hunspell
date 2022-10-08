@@ -1,0 +1,10 @@
+Language: deutsch/Deutschland, alte Rechtschreibung (German/Germany, traditional spelling)
+Hash-Name: de_DE-1901
+Emacsen-Name: de_DE-1901
+Emacsen-Names: de_DE-1901, german-old8
+Casechars: [A-Za-zäöüßÄÖÜ]
+Not-Casechars: [^A-Za-zäöüßÄÖÜ]
+Otherchars: [-]
+Additionalchars: äöüßÄÖÜ
+Coding-System: utf-8
+Hunspell-Locales: de_DE-1901

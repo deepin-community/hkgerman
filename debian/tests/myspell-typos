@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Test myspell dictionary with wrong UTF-8 German words.
+#
+# (c) 2018 Roland Rosenfeld <roland@debian.org>
+
+TESTSDIR=$(dirname $0)
+
+if [ -z "$AUTOPKGTEST_TMP" ]; then
+    AUTOPKGTEST_TMP=$(mktemp -d)
+fi
+trap "rm -rf $AUTOPKGTEST_TMP" EXIT
+
+hunspell -l -d de_DE-1901 < $TESTSDIR/typo.utf8.txt \
+                          > $AUTOPKGTEST_TMP/myspell.typo.out
+
+if diff $AUTOPKGTEST_TMP/myspell.typo.out $TESTSDIR/typo.utf8.txt > $AUTOPKGTEST_TMP/diff.typo.out
+then
+    exit 0
+else
+    echo "following words are wrongly accepted:"
+    grep '^>' $AUTOPKGTEST_TMP/diff.typo.out
+    exit 1
+fi

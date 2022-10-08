@@ -1,0 +1,26 @@
+Language: deutsch (Old German -tex mode-)
+Hash-Name: ogerman
+Emacsen-Name: german-old
+Casechars: [A-Za-z\"]
+Not-Casechars: [^A-Za-z\"]
+Otherchars: [']
+Many-Otherchars: no
+Additionalchars: \"
+Ispell-Args: -C -d ogerman
+Extended-Character-Mode: ~tex
+Coding-System: utf-8
+Locale: de_DE
+
+Language: deutsch (Old German 8 bit)
+Hash-Name: ogerman
+Emacsen-Name: german-old8
+Casechars: [A-Za-zÄÖÜäößü]
+Not-Casechars: [^A-Za-zÄÖÜäößü]
+Otherchars: [']
+Many-Otherchars: no
+Additionalchars: ÄÖÜäößü
+Ispell-Args: -C -d ogerman
+Extended-Character-Mode: ~utf8
+Coding-System: utf-8
+Locale: de_DE
+Auto-Compat: ogerman

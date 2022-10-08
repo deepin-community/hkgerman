@@ -1,0 +1,16 @@
+Description: fix spell in of referentiell.
+Author: Roland Rosenfeld <roland@debian.org>
+Bug-Debian: http://bugs.debian.org/137094
+Forwarded: no upstream available
+
+--- a/adjektive.txt
++++ b/adjektive.txt
+@@ -6864,7 +6864,7 @@ redlich/ACU
+ redselig/AC
+ redundant/A
+ reell/ACU
+-referenziell/A
++referentiell/A
+ reflektiv/A
+ reflexartig/A
+ reflexionsfrei/A

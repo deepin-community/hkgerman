@@ -1,0 +1,31 @@
+Description: Add elektronik, orgabk, marken, worte2, zusammen, technik,
+ compeng, alphabeta, roemisch to dictionary.
+Author: Roland Rosenfeld <roland@debian.org>
+Forwarded: no upstream available
+
+--- a/Makefile
++++ b/Makefile
+@@ -3,7 +3,9 @@ LC_ALL=C
+ 
+ WORTE =	worte.txt verben.txt adjektive.txt klein.txt \
+ 	geographie.txt vornamen.txt abkuerz.txt imperat.txt latein.txt \
+-	informatik.txt infoabk.txt
++	informatik.txt infoabk.txt elektronik.txt orgabk.txt marken.txt \
++	worte2.txt zusammen.txt technik.txt compeng.txt \
++	alphabeta.txt roemisch.txt
+ 
+ ASPELL = /usr/bin/aspell --local-data-dir=. -l de-1901
+ ISPELL = /usr/bin/ispell
+@@ -20,10 +22,9 @@ multi_files = de_DE-1901.multi de_CH-190
+ 
+ deutsch.hash: all.words deutsch.aff
+ 	buildhash all.words deutsch.aff $@
+- 
++
+ all.words: $(WORTE)
+-	#sort -u $+ > $@
+-	sort -u *.txt > $@
++	sort -u $+ > $@
+ 
+ myspelldic: deutsch.hash
+ 	perl myspellfixprefix.pl < all.words |sort -u | perl uniqflag.pl > myspell.dic.tmp
